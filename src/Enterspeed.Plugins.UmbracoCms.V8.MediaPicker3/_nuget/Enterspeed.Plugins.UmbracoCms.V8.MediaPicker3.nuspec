@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3</id>
+    <version>0.0.0</version>
+    <authors>Enterspeed</authors>
+    <owners>Enterspeed</owners>
+    <projectUrl>https://www.enterspeed.com/</projectUrl>
+    <repository type="git" url="https://github.com/enterspeedhq/enterspeed-plugins-umbraco-8-cms"></repository>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <description>Enterspeed plugin for Umbraco 8 Media Picker 3 property value conversion</description>
+    <tags>Enterspeed, Umbraco 8</tags>
+    <dependencies>
+      <group>
+        <dependency id="Enterspeed.Source.UmbracoCms.V8" version="[0.4,1.0)" />
+        <dependency id="UmbracoCms.Core" version="[8.14,9.0)" />
+        <dependency id="UmbracoCms.Web" version="[8.14,9.0)" />
+      </group>
+      <group targetFramework=".NETFramework4.7.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\bin\Release\Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3.dll" target="lib\net472" />
+    <file src="..\bin\Release\Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3.pdb" target="lib\net472" />
+  </files>
+</package>
