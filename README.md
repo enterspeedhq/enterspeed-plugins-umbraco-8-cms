@@ -1,8 +1,4 @@
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/enterspeedhq/enterspeed-source-umbraco-cms/pulls)
-[![Twitter](https://img.shields.io/twitter/follow/enterspeedhq?style=social)](https://twitter.com/enterspeedhq)
-
-# Enterspeed.Plugins.UmbracoCms.V8
+# Enterspeed.Plugins.UmbracoCms.V8 &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/enterspeedhq/enterspeed-source-umbraco-cms/pulls) [![Twitter](https://img.shields.io/twitter/follow/enterspeedhq?style=social)](https://twitter.com/enterspeedhq)
 
 This repository houses open-source plugins created for Umbraco integration with Enterspeed.
 
