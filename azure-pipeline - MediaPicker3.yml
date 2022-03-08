@@ -129,12 +129,5 @@ stages:
                       git push --tags
                 - task: NuGetAuthenticate@0
                   displayName: 'NuGet Authenticate'
-                - task: NuGetCommand@2
-                  displayName: Release on NuGet.org
-                  inputs:
-                    command: push
-                    packagesToPush: "$(Pipeline.Workspace)/**/*.nupkg"
-                    nuGetFeedType: external
-                    publishFeedCredentials: NuGet.org
-                    includeSymbols: false
-                    allowPackageConflicts: true
+                - script: nuget push $(Pipeline.Workspace)/**/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey $(NugetApiKey) -SkipDuplicate -NoSymbols
+                  displayName: 'Push to NuGet.org'
