@@ -41,6 +41,8 @@ trigger:
   paths:
     exclude:
       - /**/*.md
+    include:
+      - $(projectFolder)
 
 pr:
   branches:
@@ -49,6 +51,8 @@ pr:
   paths:
     exclude:
       - /**/*.md
+    include:
+      - $(projectFolder)
 
 stages:
   - stage: Build
