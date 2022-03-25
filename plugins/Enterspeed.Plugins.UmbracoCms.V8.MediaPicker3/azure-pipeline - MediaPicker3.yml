@@ -42,7 +42,7 @@ trigger:
     exclude:
       - /**/*.md
     include:
-      - plugins/Enterspeed.Plugins.UmbracoCms.V8.SsgDeploy/src
+      - plugins/Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3/src
 
 pr:
   branches:
@@ -52,7 +52,7 @@ pr:
     exclude:
       - /**/*.md
     include:
-      - plugins/Enterspeed.Plugins.UmbracoCms.V8.SsgDeploy/src
+      - plugins/Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3/src
 
 stages:
   - stage: Build
