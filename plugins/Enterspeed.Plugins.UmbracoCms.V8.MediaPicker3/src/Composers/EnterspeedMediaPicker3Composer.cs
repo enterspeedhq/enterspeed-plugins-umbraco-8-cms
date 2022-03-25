@@ -11,7 +11,8 @@ namespace Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3.Composers
         public void Compose(Composition composition)
         {
             composition.EnterspeedPropertyValueConverters()
-                .Append<MediaPicker3PropertyValueConverter>();
+                .Append<MediaPicker3PropertyValueConverter>(); 
+                
         }
     }
 }
