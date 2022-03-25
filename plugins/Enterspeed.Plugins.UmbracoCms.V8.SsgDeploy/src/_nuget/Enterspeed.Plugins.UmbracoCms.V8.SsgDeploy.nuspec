@@ -12,8 +12,8 @@
     <description>Ssg deployment plugin for Umbraco 8</description>
     <tags>Ssg, Umbraco 8</tags>
     <dependencies>
-      <dependency id="UmbracoCms.Core" version="[8.7,9.0)" />
-      <dependency id="UmbracoCms.Web" version="[8.7,9.0)" />
+      <dependency id="UmbracoCms.Core" version="[8.7, 8.99)" />
+      <dependency id="UmbracoCms.Web" version="[8.7,8.99)" />
     </dependencies>
   </metadata>
   <files>

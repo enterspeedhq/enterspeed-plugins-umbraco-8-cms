@@ -1,6 +1,6 @@
 variables:
   projectName: 'Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3'
-  projectFolder: 'src/$(projectName)'
+  projectFolder: 'plugins/$(projectName)/src'
   project: '$(projectFolder)/$(projectName).csproj'
   nuSpec: '$(projectFolder)/_nuget/$(projectName).nuspec'
   majorVersion: 0
@@ -101,33 +101,33 @@ stages:
               targetPath: "$(Build.ArtifactStagingDirectory)"
               artifact: nupkg
 
-  - stage: Release
-    displayName: Release
-    condition: and(succeeded(), eq(variables.releaseOnNuget, 'true'))
-    jobs:
-      - deployment: ReleaseNuGet
-        displayName: Release on NuGet.org
-        environment: NuGetOrg
-        pool:
-          vmImage: ubuntu-latest
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - checkout: self
-                  persistCredentials: true
-                  clean: true
-                  fetchDepth: 1
+  # - stage: Release
+  #   displayName: Release
+  #   condition: and(succeeded(), eq(variables.releaseOnNuget, 'true'))
+  #   jobs:
+  #     - deployment: ReleaseNuGet
+  #       displayName: Release on NuGet.org
+  #       environment: NuGetOrg
+  #       pool:
+  #         vmImage: ubuntu-latest
+  #       strategy:
+  #         runOnce:
+  #           deploy:
+  #             steps:
+  #               - checkout: self
+  #                 persistCredentials: true
+  #                 clean: true
+  #                 fetchDepth: 1
 
-                # Tag release in git
-                - task: Bash@3
-                  displayName: Tag version in git
-                  inputs:
-                    targetType: inline
-                    script: |
-                      git tag $(projectName)-$(semVersion)
-                      git push --tags
-                - task: NuGetAuthenticate@0
-                  displayName: 'NuGet Authenticate'
-                - script: nuget push $(Pipeline.Workspace)/**/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey $(NugetApiKey) -SkipDuplicate -NoSymbols
-                  displayName: 'Push to NuGet.org'
+  #               # Tag release in git
+  #               - task: Bash@3
+  #                 displayName: Tag version in git
+  #                 inputs:
+  #                   targetType: inline
+  #                   script: |
+  #                     git tag $(projectName)-$(semVersion)
+  #                     git push --tags
+  #               - task: NuGetAuthenticate@0
+  #                 displayName: 'NuGet Authenticate'
+  #               - script: nuget push $(Pipeline.Workspace)/**/*.nupkg -Source https://api.nuget.org/v3/index.json -ApiKey $(NugetApiKey) -SkipDuplicate -NoSymbols
+  #                 displayName: 'Push to NuGet.org'
