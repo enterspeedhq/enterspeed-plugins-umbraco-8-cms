@@ -42,7 +42,7 @@ trigger:
     exclude:
       - /**/*.md
     include:
-      - $(projectFolder)
+      - $(projectFolder)/*
 
 pr:
   branches:
@@ -52,7 +52,7 @@ pr:
     exclude:
       - /**/*.md
     include:
-      - $(projectFolder)
+      - $(projectFolder)/*
 
 stages:
   - stage: Build
