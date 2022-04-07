@@ -16,8 +16,6 @@ namespace Enterspeed.Plugins.UmbracoCms.V8.SsgDeploy.Components
 
             composition.SsgServices()
                 .Append<NetlifySsgService>();
-
-                
         }
     }
 }
