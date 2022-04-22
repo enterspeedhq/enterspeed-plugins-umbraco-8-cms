@@ -4,7 +4,8 @@ This repository houses open-source plugins created for Umbraco integration with 
 
 ## Available plugins
 
-[MediaPicker3](./src/Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3/) - Plugin enabling new Umbraco 8.14+ media picker property value mapping towards Enterspeed.
+[MediaPicker3](./plugins/Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3/) - Plugin enabling new Umbraco 8.14+ media picker property value mapping towards Enterspeed.
+[SsgDeploy](./plugins/Enterspeed.Plugins.UmbracoCms.V8.SsgDeploy/) - Plugin enabling SSG deploy from Umbraco backoffice.
 
 ## Contributing
 
