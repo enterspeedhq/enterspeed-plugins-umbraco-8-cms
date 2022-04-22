@@ -1,13 +1,13 @@
 variables:
-  projectName: 'Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3'
-  projectFolder: 'src/$(projectName)'
+  projectName: 'Enterspeed.Plugins.UmbracoCms.V8.SsgDeploy'
+  projectFolder: 'plugins/$(projectName)/src'
   project: '$(projectFolder)/$(projectName).csproj'
   nuSpec: '$(projectFolder)/_nuget/$(projectName).nuspec'
   majorVersion: 0
   minorVersion: 1
-  patchVersion: 1
+  patchVersion: 2
 
-  version: $[format('{0}.{1}.{2}', variables.majorVersion, variables.minorVersion, variables.patchVersion)]
+  version: $[format('{0}.{1}.{2}-alpha', variables.majorVersion, variables.minorVersion, variables.patchVersion)]
   ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/master') }}:
     releaseOnNuget: true
     semVersion: $[format('{0}', variables.version)]
@@ -41,6 +41,8 @@ trigger:
   paths:
     exclude:
       - /**/*.md
+    include:
+      - plugins/Enterspeed.Plugins.UmbracoCms.V8.SsgDeploy/src
 
 pr:
   branches:
@@ -49,6 +51,8 @@ pr:
   paths:
     exclude:
       - /**/*.md
+    include:
+      - plugins/Enterspeed.Plugins.UmbracoCms.V8.SsgDeploy/src
 
 stages:
   - stage: Build
@@ -102,7 +106,9 @@ stages:
               artifact: nupkg
 
   - stage: Release
-    displayName: Release
+    displayName: Release    
+    variables:
+      - group: 'OpenSourceProjects'
     condition: and(succeeded(), eq(variables.releaseOnNuget, 'true'))
     jobs:
       - deployment: ReleaseNuGet
