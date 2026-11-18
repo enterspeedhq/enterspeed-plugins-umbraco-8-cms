@@ -2,6 +2,8 @@
 
 This repository houses open-source plugins created for Umbraco integration with Enterspeed.
 
+**This repository is no longer maintained. It only supports Umbraco 8, which reached end-of-life on February 24 2025. The repository is archived and read-only.**
+
 ## Available plugins
 
 [MediaPicker3](./plugins/Enterspeed.Plugins.UmbracoCms.V8.MediaPicker3/) - Plugin enabling new Umbraco 8.14+ media picker property value mapping towards Enterspeed.
